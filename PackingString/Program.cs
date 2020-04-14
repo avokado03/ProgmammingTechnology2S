@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PackingString
 {
@@ -20,11 +16,13 @@ namespace PackingString
                 packer = new StringPacker();
                 output = packer.Pack(input);
                 Console.WriteLine(output);
-                Console.ReadKey();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            finally
+            {
                 Console.ReadKey();
             }
         }
