@@ -40,6 +40,7 @@ namespace ReversePolishNotation
             return OperationDict[operation].Invoke(fOperand, sOperand, operation);
         }
 
+        //TODO: To static dictionary
         private void FillOperationDictionary()
         {
             OperationDict = new Dictionary<string, Func<int, int, string, int>>
