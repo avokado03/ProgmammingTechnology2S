@@ -4,12 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{454BCFAE-58E9-4EB1-8458-47DD3B7513BE}</ProjectGuid>
+    <ProjectGuid>{9FA551F7-9EDB-436C-9EE1-250231F5AA79}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PackingString</RootNamespace>
-    <AssemblyName>PackingString</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>SubsetsFinding</RootNamespace>
+    <AssemblyName>SubsetsFinding</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -42,15 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinarySubsetsFinder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringPacker.cs" />
+    <Compile Include="RecursiveSubsetsFinder.cs" />
+    <Compile Include="SubsetsFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilsLibrary\UtilsLibrary.csproj">
+      <Project>{5176fefe-504e-428b-b0de-036fb0cae1d7}</Project>
+      <Name>UtilsLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)bin\Debug\PackingString.exe" "$(SolutionDir)Build\" /Y /I</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(ProjectDir)bin\Debug\SubsetsFinding.exe" "$(SolutionDir)Build\" /Y /I</PostBuildEvent>
   </PropertyGroup>
 </Project>

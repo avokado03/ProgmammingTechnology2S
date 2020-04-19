@@ -50,4 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)bin\Debug\UnpackingString.exe" "$(SolutionDir)Build\" /Y /I</PostBuildEvent>
+  </PropertyGroup>
 </Project>

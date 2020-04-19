@@ -1,0 +1,36 @@
+﻿<Window x:Class="ProgrammingTechnology2S.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgrammingTechnology2S"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="414" Width="388">
+    <Grid Margin="0,0,3.6,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="chooseLabel" Content="Выберите проект для запуска:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top"/>
+        <ComboBox x:Name="projectsBox" ItemsSource="{Binding Projects}" SelectedItem="{Binding SelectedProject}" DisplayMemberPath="Name" Grid.Row="1" Grid.Column="0" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+        <TextBlock x:Name="descriptionBlock"  HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="0" Margin="10" TextWrapping="Wrap" Text="{Binding SelectedProject.Description}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="projectPointsBlock" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top">
+            <Run Text="Баллов за задание:"></Run>
+            <Run Text="{Binding SelectedProject.Points}"></Run>
+        </TextBlock>
+        <Button x:Name="runButton" Content="Запустить" HorizontalAlignment="Stretch" Grid.Row="4" Grid.Column="0" Margin="25,10,25,10" VerticalAlignment="Top" Click="RunButton_Click" />
+        <TextBlock x:Name="counPointsBlock" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top">
+            <Run Text="Всего баллов: "></Run>
+            <Run Text="{Binding Points}"></Run>
+        </TextBlock>
+        <TextBlock x:Name="errorBlock" Grid.Row="6" Grid.Column="0" Margin="5"></TextBlock>
+    </Grid>
+</Window>
