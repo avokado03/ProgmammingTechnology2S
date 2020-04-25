@@ -8,6 +8,7 @@ namespace SInX
         static void Main(string[] args)
         {
             double x, eps;
+            MyMath myMath;
             Console.WriteLine("Введите величину угла в радианах: ");
             try
             {
@@ -15,10 +16,9 @@ namespace SInX
                 x = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Введите точность: ");
                 eps = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("MyMath.Sin({0}) = {1}",x, MyMath.Sin(x, eps));
+                myMath = new MyMath(eps, x);
+                Console.WriteLine("MyMath.Sin({0}) = {1}",x, myMath.Sin());
                 Console.WriteLine("Math.Sin({0}) = {1}", x, Math.Sin(x));
-                Console.WriteLine("MyMath.Cos({0}) = {1}", x, MyMath.Cos(x, eps));
-                Console.WriteLine("Math.Cos({0}) = {1}", x, Math.Cos(x));
             }
             catch (Exception ex)
             {

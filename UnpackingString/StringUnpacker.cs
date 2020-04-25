@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace UnpackingString
 {
+    /// <summary>
+    /// Распаковать строку из PackingString
+    /// </summary>
     public class StringUnpacker
     {
         private bool Validate(string str)

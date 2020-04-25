@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace ThreeMinNumbers
 {
+    /// <summary>
+    /// Найти 3 минимальных числа в массиве
+    /// </summary>
     public class DefaultThreeMinFinder : IThreeMinFinder
     {
         public IEnumerable<int> Find(int[] array)

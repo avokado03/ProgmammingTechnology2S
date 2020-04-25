@@ -3,13 +3,16 @@ using System.Collections.Generic;
 
 namespace ReversePolishNotation
 {
+    /// <summary>
+    /// Вычислить значение выражения, записанного в постфиксной форме
+    /// </summary>
     public class RPNCalculator
     {
         private Dictionary<string, Func<int, int, string, int>> OperationDict;
 
         public RPNCalculator()
         {
-            FillOperationDictionary();
+            OperationDict = Operations.GetOperationDictionary();
         }
 
         public int Calculate(string expression)
@@ -39,17 +42,6 @@ namespace ReversePolishNotation
                 throw new ArgumentException("Operation not found", operation);
             return OperationDict[operation].Invoke(fOperand, sOperand, operation);
         }
-
-        //TODO: To static dictionary
-        private void FillOperationDictionary()
-        {
-            OperationDict = new Dictionary<string, Func<int, int, string, int>>
-            {
-                {"+", (int fOperand, int sOperand, string operation) => { return fOperand + sOperand; } },
-                {"-" ,(int fOperand, int sOperand, string operation) => { return fOperand - sOperand; } },
-                {"*", (int fOperand, int sOperand, string operation) => { return fOperand * sOperand; } },
-                {"/", (int fOperand, int sOperand, string operation) => { return fOperand / sOperand; } }
-            };
-        }         
+   
     }
 }

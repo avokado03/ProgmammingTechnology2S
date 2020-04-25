@@ -3,12 +3,14 @@ using UtilsLibrary;
 
 namespace ConsoleApp2
 {
+    /// <summary>
+    /// Найти все подмножества заданного множества (рекурсивно)
+    /// </summary>
     public class RecursiveSubsetsFinder : SubsetsFinder
     {
 
         public RecursiveSubsetsFinder(int[] set) : base(set)
         {
-
         }
 
         public override List<string> GetAllSubsets()

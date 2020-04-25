@@ -4,6 +4,10 @@ using System.Text;
 
 namespace PackingString
 {
+    /// <summary>
+    /// Дана текстовая строка вида: “XXXZZRRVBVVVVVWW…” (не содержащая символа
+    ///@). Упаковать ее, заменив группы одинаковых символов: VVVVV = @5V(3 балла)
+    /// </summary>
     public class StringPacker
     {
         public string Pack(string str)

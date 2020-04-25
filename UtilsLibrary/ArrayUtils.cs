@@ -11,13 +11,6 @@ namespace UtilsLibrary
             Console.WriteLine();
         }
 
-        public static void PrintArray(int[] array, int from, int to)
-        {
-            for (int i = from; i <= to; i++)
-                Console.Write(array[i] + " ");
-            Console.WriteLine();
-        }
-
         public static int[] SetArray(int length = 10)
         {
             int[] array = new int[length];

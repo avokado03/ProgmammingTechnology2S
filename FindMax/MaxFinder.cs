@@ -2,6 +2,10 @@
 
 namespace FindMax
 {
+    /// <summary>
+    /// Дан массив X типа int и его размер n. Найти величину максимума массива без
+    ///использования каких-либо операторов цикла и goto (2 балла)
+    /// </summary>
     public class MaxFinder
     {
         public int Find(int[] array, int size)
